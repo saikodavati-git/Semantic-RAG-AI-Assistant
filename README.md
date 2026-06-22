@@ -3,12 +3,12 @@ SemanticRAG AI Assistant
 
 A production-ready Retrieval-Augmented Generation chatbot built with Streamlit, ChromaDB, Sentence Transformers, LangChain text splitting, PyPDF, python-docx, python-dotenv, and Google Gemini 2.5 Flash.
 
-
+<img width="1913" height="969" alt="Image" src="https://github.com/user-attachments/assets/c374fa5f-d397-45b4-9cb6-961b19cb41b2" />
 
 
 SemanticRAG AI Assistant/
 |-- src/
-|   `-- app.py          
+|     -- app.py          
 |-- README.md
 |-- requirements.txt
 |-- Dockerfile
