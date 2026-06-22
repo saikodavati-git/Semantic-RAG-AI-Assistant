@@ -1,4 +1,4 @@
-SemanticRAG AI Assistant
+Semantic RAG AI Assistant
 
 
 A production-ready Retrieval-Augmented Generation chatbot built with Streamlit, ChromaDB, Sentence Transformers, LangChain text splitting, PyPDF, python-docx, python-dotenv, and Google Gemini 2.5 Flash.
@@ -9,150 +9,16 @@ A production-ready Retrieval-Augmented Generation chatbot built with Streamlit, 
 
 
 
-<img width="1918" height="793" alt="Image" src="https://github.com/user-attachments/assets/fbd1871e-2703-4c68-bff1-9e0580fa66a1" />
+
+<img width="664" height="725" alt="Image" src="https://github.com/user-attachments/assets/ac2061a4-bcbe-45cf-baeb-860b191e4b93" />
 
 
 
+Semantic RAG AI Assistant – End-to-End System Architecture:
 
 
-<img width="1919" height="784" alt="Image" src="https://github.com/user-attachments/assets/bd2cdf57-5d5b-4f92-be2e-9eb9b3258125" />
+<img width="1096" height="724" alt="Image" src="https://github.com/user-attachments/assets/fd678e37-5247-492c-a501-452dc0be24e0" />
 
-
-
-
-SemanticRAG AI Assistant/
-|-- src/
-|     -- app.py          
-|-- README.md
-|-- requirements.txt
-|-- Dockerfile
-|-- config.toml
-|-- uploads/           
-`-- vector_store/       ChromaDB 
-
-
-Architecture:
-
-
-
-Ingestion Pipeline:
-
-
-
-
-Document Upload
-
-|
-|
-|
-
-
-Streamlit Frontend
-|
-|
-|
-
-
-Text Extraction
-|
-|
-|
-
-
-Chunking
-|
-|
-|
-
-
-Generate SHA-256 Chunk ID
-|
-|
-|
-
-
-Check Existing IDs in ChromaDB
-|
-|
-|
-
-
---- Existing ID -- Skip chunk, no re-embedding
-|
-|
-|
-
-
---- New ID
-    |
-    |
-    |
-    
-
-Sentence Transformers (all-MiniLM-L6-v2)
-    |
-    |
-    |
-    
-
-Store embedding + chunk text + metadata in ChromaDB
-
-
-
-
-
-Query Pipeline:
-
-
-User Question
-|
-|
-|
-
-
-Streamlit Chat Input
-|
-|
-|
-
-
-Sentence Transformers (all-MiniLM-L6-v2)
-|
-|
-|
-
-
-Semantic Similarity Search in ChromaDB
-|
-|
-|
-
-
-Top-K Relevant Chunks
-|
-|
-|
-
-
-Build Prompt with Chunks + Current Question + Chat History
-|
-|
-|
-
-
-Gemini 2.5 Flash
-|
-|
-|
-
-
-Response
-|
-|
-|
-
-
-Streamlit Chat UI
 
 
 
