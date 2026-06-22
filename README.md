@@ -6,6 +6,20 @@ A production-ready Retrieval-Augmented Generation chatbot built with Streamlit, 
 <img width="1913" height="969" alt="Image" src="https://github.com/user-attachments/assets/c374fa5f-d397-45b4-9cb6-961b19cb41b2" />
 
 
+
+
+
+<img width="1918" height="793" alt="Image" src="https://github.com/user-attachments/assets/fbd1871e-2703-4c68-bff1-9e0580fa66a1" />
+
+
+
+
+
+<img width="1919" height="784" alt="Image" src="https://github.com/user-attachments/assets/bd2cdf57-5d5b-4f92-be2e-9eb9b3258125" />
+
+
+
+
 SemanticRAG AI Assistant/
 |-- src/
 |     -- app.py          
@@ -27,51 +41,62 @@ Ingestion Pipeline:
 
 
 Document Upload
+
 |
 |
 |
+
 
 Streamlit Frontend
 |
 |
 |
 
+
 Text Extraction
 |
 |
 |
+
 
 Chunking
 |
 |
 |
 
+
 Generate SHA-256 Chunk ID
 |
 |
 |
+
 
 Check Existing IDs in ChromaDB
 |
 |
 |
 
+
 --- Existing ID -- Skip chunk, no re-embedding
 |
 |
 |
 
+
 --- New ID
     |
     |
     |
+    
 
 Sentence Transformers (all-MiniLM-L6-v2)
     |
     |
     |
+    
 
 Store embedding + chunk text + metadata in ChromaDB
+
 
 
 
@@ -84,42 +109,51 @@ User Question
 |
 |
 
+
 Streamlit Chat Input
 |
 |
 |
+
 
 Sentence Transformers (all-MiniLM-L6-v2)
 |
 |
 |
 
+
 Semantic Similarity Search in ChromaDB
 |
 |
 |
+
 
 Top-K Relevant Chunks
 |
 |
 |
 
+
 Build Prompt with Chunks + Current Question + Chat History
 |
 |
 |
+
 
 Gemini 2.5 Flash
 |
 |
 |
 
+
 Response
 |
 |
 |
 
+
 Streamlit Chat UI
+
 
 
 
@@ -127,19 +161,47 @@ Features:
 
 
 Multi-document upload support for PDF, DOCX, and TXT files.
+
+
 Automated text extraction using PyPDF, python-docx, and TXT decoding.
+
+
 Intelligent document chunking with RecursiveCharacterTextSplitter.
+
+
 Duplicate-aware indexing using SHA-256 chunk identification.
+
+
 Semantic embeddings powered by Sentence Transformers (all-MiniLM-L6-v2).
+
+
 ChromaDB vector database for efficient document storage and retrieval.
+
+
 Metadata preservation including source file, chunk index, and page numbers.
+
+
 Semantic search with Top-K relevant chunk retrieval.
+
+
 Context-aware question answering using Gemini 2.5 Flash.
+
+
 Conversational chat experience with persistent chat history.
+
+
 Transparent retrieval by displaying relevant document chunks.
+
+
 Document reindexing and chat reset functionality.
+
+
 Comprehensive logging for uploads, indexing, retrieval, responses, and errors.
+
+
 Dockerized application for containerized deployment.
+
+
 Cloud-native deployment on Google Cloud Platform (GCP) using Cloud Run
 
 
@@ -247,9 +309,21 @@ After deployment, configure the `GOOGLE_API_KEY` environment variable in Cloud R
 Production Notes
 
 Store the GOOGLE_API_KEY securely using environment variables or a secret manager.
+
+
 Never upload or commit the .env file to GitHub.
+
+
 Since Cloud Run storage is temporary, use a persistent storage solution or an external vector database for long-term document indexing.
+
+
 Increase CPU and memory resources if faster application startup and embedding generation are required.
+
+
 Duplicate detection is based on document content, preventing the same text from being indexed multiple times.
+
+
 Embeddings are created only for newly added content, reducing processing time and storage costs.
+
+
 Review security settings before deploying with public access (--allow-unauthenticated) to ensure only authorized users can access the application.
