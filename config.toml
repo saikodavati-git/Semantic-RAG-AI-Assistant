@@ -1,0 +1,6 @@
+[server]
+headless = true
+port = 8080
+enableXsrfProtection = false
+maxUploadSize = 200
+
